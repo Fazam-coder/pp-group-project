@@ -1,0 +1,19 @@
+name: LZW
+
+on:
+  push:
+    branches: [lzw]
+  pull_request:
+    branches: [main]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Build OpenMP and sequential versions
+        run: make && make lzw_seq
+      - name: Test OpenMP version
+        run: python3 tests/test_lzw.py ./lzw
+      - name: Test sequential version
+        run: python3 tests/test_lzw.py ./lzw_seq
