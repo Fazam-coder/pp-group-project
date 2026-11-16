@@ -21,9 +21,9 @@ README.md          этот файл
 Каждый алгоритм собирается из своей папки:
 
 ```bash
-cd huffman      # или lz77, или lzw
-make            # параллельная версия (OpenMP)
-make <имя>_seq  # последовательная версия: huffman_seq, lz77_seq или lzw_seq (тот же код без OpenMP)
+cd huffman              # или lz77, или lzw
+make                    # параллельная версия (OpenMP)
+make huffman_seq        # последовательная версия (тот же код без OpenMP); в lz77/ — lz77_seq, в lzw/ — lzw_seq
 make clean
 ```
 
